@@ -1,0 +1,35 @@
+﻿<Application x:Class="KryptPw.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:KryptPw"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        
+        <Style x:Key="PasswordLabelStyle" TargetType="Control">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="#FF0078D7"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+        </Style>
+
+        <Style x:Key="DarkBackground" TargetType="Control">
+            <Setter Property="Background" Value="#FF2D2D30"/>
+        </Style>
+
+        <Style x:Key="Centered" TargetType="WrapPanel">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="RedText" TargetType="Label" BasedOn="{StaticResource PasswordLabelStyle}">
+            <Setter Property="Foreground" Value="#FFD69D85"/>
+        </Style>
+
+        <Style x:Key="GreenText" TargetType="Label" BasedOn="{StaticResource PasswordLabelStyle}">
+            <Setter Property="Foreground" Value="#FF278B27"/>
+        </Style>
+        
+    </Application.Resources>
+</Application>

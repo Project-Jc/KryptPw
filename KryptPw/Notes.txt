@@ -1,0 +1,28 @@
+﻿Instances where the password will be requested.
+
+1) When the program first runs and a relevant file is found
+2) when the user wants to load a file
+3) When the user wants to "Save as..."
+
+
+.. Detecting failed decrypting of files ..
+
+Decryption procedure...
+
+	kPwFile.LoadDataFromEncryptedFile() -> Security.DecryptFile() which returns a MemoryStream object.
+	kPwFile.LoadDataFromEncryptedFile() -> LoadDataFromMemoryStream(memoryStream) attempts to deserialize the memory stream and update the DataGrid.
+
+Security.DecryptFile() throws an exception if the password is incorrect.
+LoadDataFromMemoryStream() also throws an exception because obviously the data is mangled due to the failed decryption.
+
+
+## TODO ##
+
+A) Look into SaaS/web computing of the main encryption/decryption procedures
+B) Possible saving to/loading from a database
+C) More secure procedure of password storing
+D) User defined hash-rate
+E) DONE | Program settings (Load previously used file)
+F) DONE | Detect cell changes so we can request if the user wishes to save those changes upon the program exiting
+G) Async file operations
+H) Random key generator
